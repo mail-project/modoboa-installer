@@ -36,9 +36,9 @@ class ManualCertificate(CertificateBackend):
         super().__init__(*args, **kwargs)
         path_correct = True
         self.tls_cert_file_path = self.config.get("certificate",
-                                                  "tls_key_file_path")
+                                                  "tls_cert_file_path")
         self.tls_key_file_path = self.config.get("certificate",
-                                                 "tls_cert_file_path")
+                                                 "tls_key_file_path")
 
         if not os.path.exists(self.tls_key_file_path):
             utils.error("'tls_key_file_path' path is not accessible")
@@ -162,10 +162,6 @@ fi
 def get_backend(config):
     """Return the appropriate backend."""
     cert_type = config.get("certificate", "type")
-    condition = (not config.getboolean("certificate", "generate") and
-                 cert_type != "manual")
-    if condition:
-        return None
     if cert_type == "letsencrypt":
         return LetsEncryptCertificate(config)
     if cert_type == "manual":
