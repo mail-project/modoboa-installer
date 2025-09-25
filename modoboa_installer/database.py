@@ -3,19 +3,19 @@
 import os
 import pwd
 import stat
+from typing import Optional
 
 from . import package
 from . import system
 from . import utils
 
 
-class Database(object):
-
+class Database:
     """Common database backend."""
 
-    default_port = None
-    packages = None
-    service = None
+    default_port: Optional[int] = None
+    packages: Optional[dict[str, list[str]]] = None
+    service: Optional[str] = None
 
     def __init__(self, config):
         """Install if necessary."""
@@ -36,7 +36,6 @@ class Database(object):
 
 
 class PostgreSQL(Database):
-
     """Postgres."""
 
     default_port = 5432
@@ -157,7 +156,6 @@ class PostgreSQL(Database):
 
 
 class MySQL(Database):
-
     """MySQL backend."""
 
     default_port = 3306
@@ -178,7 +176,7 @@ class MySQL(Database):
         if name.startswith("debian"):
             if version.startswith("8"):
                 self.packages["deb"].append("libmysqlclient-dev")
-            elif version.startswith("11") or version.startswith("12"):
+            elif int(version[:2]) >= 11:
                 self.packages["deb"].append("libmariadb-dev")
             else:
                 self.packages["deb"].append("libmariadbclient-dev")
@@ -188,7 +186,7 @@ class MySQL(Database):
                 self.packages["deb"].append("libmariadb-dev")
             else:
                 self.packages["deb"].append("libmysqlclient-dev")
-        super(MySQL, self).install_package()
+        super().install_package()
         queries = []
         if name.startswith("debian"):
             if version.startswith("8"):
@@ -200,7 +198,7 @@ class MySQL(Database):
                     self.dbpassword)
                 return
         if (
-            (name.startswith("debian") and (version.startswith("11") or version.startswith("12"))) or
+            (name.startswith("debian") and int(version[:2]) >= 11) or
             (name.startswith("ubuntu") and int(version[:2]) >= 22)
         ):
             queries = [
