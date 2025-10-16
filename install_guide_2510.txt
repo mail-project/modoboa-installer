@@ -2,6 +2,7 @@
 
 # Common Gudie
 # 01. When modoboa install, create a new installer.cfg after backup installer.cfg
+# 02. Occur User exists error: When uninsall packages exist
 
 01. Stop Using Process
 $ sudo systemctl stop nginx uwsgi postfix dovecot amavis
