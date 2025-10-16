@@ -1,0 +1,53 @@
+# All Clean Up Modoboa Mail Server
+
+01. Stop Using Process
+$ sudo systemctl stop nginx uwsgi postfix dovecot amavis
+
+02. Remove list apps in <installer.cfg>
+
+03. Remove apt installed apps
+e.g. Dovecot
+
+a. installed package
+$ dpkg -l | grep dovecot
+
+b. remove package
+$ sudo apt purge --auto-remove dovecot* -y
+
+c. remove folder
+$ sudo rm -rf /etc/dovecot/
+$ sudo rm -rf /srv/vmail/
+
+d. remove user/group
+$ getent passwd
+- if exists
+$ sudo deluser --remove-home dovecot
+$ getent group
+- if group exists
+$ sudo delgroup dovecot
+$ sudo delgroup vmail
+
+04. Remove virtual env installed packages
+e.g. Modoboa
+
+a. Remove service folder
+$ sudo rm -rf /srv/modoboa
+
+b. Remove user/group
+$ getent passwd
+-- if user exists
+$ sudo deluser --remove-home modoboa
+$ getent group
+-- if group exists
+$ sudo delgroup modoboa
+
+05. Remove database on Postgresql
+a. DB/User
+
+06. Clean up package cache
+$ sudo apt autoremove --purge
+$ sudo apt autoclean
+
+07. Reboot System (Option)
+$ sudo reboot
+
