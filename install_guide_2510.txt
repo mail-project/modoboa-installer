@@ -1,5 +1,8 @@
 # All Clean Up Modoboa Mail Server
 
+# Common Gudie
+# 01. When modoboa install, create a new installer.cfg after backup installer.cfg
+
 01. Stop Using Process
 $ sudo systemctl stop nginx uwsgi postfix dovecot amavis
 
@@ -50,4 +53,16 @@ $ sudo apt autoclean
 
 07. Reboot System (Option)
 $ sudo reboot
+
+08. Install Modoboa
+$ sudo python ./run.py myodoo190.com --debug
+
+09. Change Permission Uwsgi
+a. /etc/uwsgi/apps-available/modoboa-instance.ini
+chmod-socket = 660 -> 662
+b. restart
+$ sudo service uwsgi restart
+
+10. Move file in Nginx
+a. /etc/nginx/sites-available/mail.myodoo190.com.conf -> /etc/nginx/conf.d/
 
