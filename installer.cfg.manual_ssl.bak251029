@@ -16,7 +16,7 @@ email = admin@example.com
 [database]
 engine = postgres
 host = 127.0.0.1
-install = false
+install = true
 
 [postgres]
 user = postgres
@@ -24,7 +24,7 @@ password =
 
 [mysql]
 user = root
-password = kkG8XYAHgAawcTaA
+password = Pwugn705EXOdekvo
 charset = utf8
 collation = utf8_general_ci
 
@@ -40,7 +40,7 @@ user = modoboa
 home_dir = /srv/modoboa
 venv_path = %(home_dir)s/env
 instance_path = %(home_dir)s/instance
-timezone = Asia/Seoul
+timezone = Europe/Paris
 dbname = modoboa
 dbuser = modoboa
 dbpassword = s15975pcjM
@@ -51,7 +51,7 @@ devmode = true
 [rspamd]
 enabled = false
 user = _rspamd
-password = 4ztFSa9rEjFojZyL
+password = MZBVo6U7y8q8Hfq7
 dnsbl = true
 dkim_keys_storage_dir = /var/lib/dkim
 key_map_path = /var/lib/dkim/keys.path.map
