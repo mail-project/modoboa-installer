@@ -24,7 +24,7 @@ password =
 
 [mysql]
 user = root
-password = 0F01jOkiO8q5c1OB
+password = 7yn54jAvfXA3FUWQ
 charset = utf8
 collation = utf8_general_ci
 
@@ -43,15 +43,15 @@ instance_path = %(home_dir)s/instance
 timezone = Asia/Seoul
 dbname = modoboa
 dbuser = modoboa
-dbpassword = s15975pcjM
+dbpassword = s15975pcj^^M
 cron_error_recipient = root
 extensions = 
-devmode = true
+devmode = false
 
 [rspamd]
 enabled = false
 user = _rspamd
-password = gs51tmnnrs2fpAdu
+password = 489JNDwVqTdMoJyB
 dnsbl = true
 dkim_keys_storage_dir = /var/lib/dkim
 key_map_path = /var/lib/dkim/keys.path.map
@@ -66,7 +66,7 @@ user = amavis
 max_servers = 2
 dbname = amavis
 dbuser = amavis
-dbpassword = s15975pcjM
+dbpassword = s15975pcj^^M
 
 [clamav]
 enabled = true
@@ -78,11 +78,11 @@ config_dir = /etc/dovecot
 user = dovecot
 home_dir = /srv/vmail
 mailboxes_owner = vmail
-extra_protocols = pop3
+extra_protocols = 
 postmaster_address = postmaster@%(domain)s
 radicale_auth_socket_path = /var/run/dovecot/auth-radicale
 move_spam_to_junk = true
-oauth2_client_secret = da0a2a87-4aa7-4ad4-81e1-f6ed152a91c1
+oauth2_client_secret = f299ed6c-7d96-4ffa-8a9c-d906867b85e2
 
 [nginx]
 enabled = true
@@ -107,7 +107,7 @@ enabled = true
 config_dir = /etc/mail/spamassassin
 dbname = spamassassin
 dbuser = spamassassin
-dbpassword = s15975pcjM
+dbpassword = s15975pcj^^M
 
 [uwsgi]
 enabled = true
@@ -120,7 +120,7 @@ user = radicale
 config_dir = /etc/radicale
 home_dir = /srv/radicale
 venv_path = %(home_dir)s/env
-oauth2_client_secret = 36c1660f-6b7a-4b57-b110-784b9a7a56c7
+oauth2_client_secret = c62ecc20-a050-43f0-b54d-7c1fed31ebf3
 
 [opendkim]
 enabled = true
@@ -129,7 +129,7 @@ config_dir = /etc
 port = 12345
 keys_storage_dir = /var/lib/dkim
 dbuser = opendkim
-dbpassword = s15975pcjM
+dbpassword = s15975pcj^^M
 
 [backup]
 default_path = ./modoboa_backup/
