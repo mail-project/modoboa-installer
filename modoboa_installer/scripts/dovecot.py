@@ -187,6 +187,10 @@ class Dovecot(base.Installer):
                 ),
                 "oauth2_introspection_url": oauth2_introspection_url,
                 "radicale_user": self.config.get("radicale", "user"),
+                "self_signed_comment": (
+                    "" if self.config.get("certificate", "type") == "self-signed"
+                    else "#"
+                ),
             }
         )
         return context
