@@ -29,7 +29,8 @@ ssl = yes
 # PEM encoded trusted certificate authority. Set this only if you intend to use
 # ssl_request_client_cert=yes. The file should contain the CA certificate(s)
 # followed by the matching CRL(s). (e.g. ssl_server_ca_file = /etc/ssl/certs/ca.pem)
-#ssl_server_ca_file = 
+#ssl_server_ca_file =
+%{self_signed_comment}ssl_client_ca_file = %tls_cert_file
 
 # Require that CRL check succeeds for client certificates.
 #ssl_server_require_crl = yes
