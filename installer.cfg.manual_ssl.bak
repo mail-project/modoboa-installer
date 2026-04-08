@@ -24,7 +24,7 @@ password =
 
 [mysql]
 user = root
-password = J7MG7Clr4K8sSKGt
+password = ADQFRWMialKcETrF
 charset = utf8
 collation = utf8_general_ci
 
@@ -51,7 +51,7 @@ devmode = false
 [rspamd]
 enabled = false
 user = _rspamd
-password = DFmp1eEwdcKII4iV
+password = zXh3E0j6AQSE7VnM
 dnsbl = true
 dkim_keys_storage_dir = /var/lib/dkim
 key_map_path = /var/lib/dkim/keys.path.map
@@ -82,7 +82,7 @@ extra_protocols =
 postmaster_address = postmaster@%(domain)s
 radicale_auth_socket_path = /var/run/dovecot/auth-radicale
 move_spam_to_junk = true
-oauth2_client_secret = 7a453d84-36a9-45e3-8352-64198730e429
+oauth2_client_secret = 94812db3-ce1c-4715-ab08-7f6f83932dd0
 
 [nginx]
 enabled = true
@@ -120,7 +120,7 @@ user = radicale
 config_dir = /etc/radicale
 home_dir = /srv/radicale
 venv_path = %(home_dir)s/env
-oauth2_client_secret = af66f80f-416c-46c0-b03d-ad91d005c0a0
+oauth2_client_secret = 08366fec-33fe-4a4e-96dd-8dbf65c30254
 
 [opendkim]
 enabled = true
