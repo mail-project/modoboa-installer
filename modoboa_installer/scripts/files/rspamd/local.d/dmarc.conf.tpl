@@ -1,3 +1,9 @@
+actions {
+  reject = "reject";
+  quarantine = "add header";
+  softfail = "no action";
+}
+
 reporting {
   # Required attributes
   enabled = true; # Enable reports in general
