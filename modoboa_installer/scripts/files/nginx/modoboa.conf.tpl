@@ -18,7 +18,7 @@ server {
     ssl_certificate %tls_cert_file;
     ssl_certificate_key %tls_key_file;
     ssl_protocols TLSv1.2 TLSv1.3;
-    ssl_ciphers "ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384";
+    ssl_ciphers "ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA512:DHE-RSA-AES256-GCM-SHA512:ECDHE-RSA-AES256-GCM-SHA384:DHE-RSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-SHA384";
     ssl_prefer_server_ciphers on;
     ssl_session_cache shared:SSL:10m;
     ssl_verify_depth 3;
