@@ -63,3 +63,6 @@ target/
 *.kdev4
 
 installer.cfg
+
+# GitHub - pcj addded
+.github/
