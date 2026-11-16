@@ -202,6 +202,8 @@ class Modoboa(base.Installer):
                 shutil.rmtree(target, ignore_errors=True)
                 os.rename(previous_instance, target)
             raise utils.FatalError(output)
+        if isinstance(output, bytes):
+            output = output.decode()
         match = re.search(
             r"^Initial password for \S+: (\S+)$", output, re.MULTILINE)
         if match:
